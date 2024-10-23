@@ -223,7 +223,8 @@ int main(int argc, char* argv[]) {
         // Step 3: Sort by latitude for the latitude-based output
         for (auto& entry : stateRecords) {
             std::sort(entry.second.begin(), entry.second.end(), [](const ZipCodeRecord& a, const ZipCodeRecord& b) {
-                return a.latitude < b.latitude;
+                return a.zipCode < b.zipCode;
+                //return a.latitude < b.latitude;  // Sorting by latitude instead of Zip Code
             });
         }
 
